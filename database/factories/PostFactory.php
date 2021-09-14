@@ -22,8 +22,8 @@ class PostFactory extends Factory
     public function definition()
     {
         return [
-            'user_id' => $this->faker->randomDigitNotNull(),
-            'content' => $this->faker->text($maxNbChars = 100),
+            'user_id' => User::all()->random()->id,
+            'content' => $this->faker->paragraph,
         ];
     }
 }
