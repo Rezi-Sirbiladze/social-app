@@ -13,7 +13,10 @@ class PostController extends Controller
      */
     public function index()
     {
-        return view('welcome');
+        $posts = Post::get();
+        return response()->$posts->toJson();
+        //return response()->json([$posts->load('comments'), 200]);
+
     }
 
     /**
